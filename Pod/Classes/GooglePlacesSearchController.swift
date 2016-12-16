@@ -148,7 +148,7 @@ open class PlaceDetails: CustomStringConvertible {
         route = component("route", inArray: addressComponents, ofType: "short_name")
         subLocality = component("subLocality", inArray: addressComponents, ofType: "long_name")
         locality = component("locality", inArray: addressComponents, ofType: "long_name")
-        postalCode = component("postal_code", inArray: addressComponents, ofType: "long_name")
+        postalCode = component("postal_code", inArray: addressComponents, ofType: "short_name")
         administrativeArea = component("administrative_area_level_1", inArray: addressComponents, ofType: "long_name")
         subAdministrativeArea = component("administrative_area_level_2", inArray: addressComponents, ofType: "long_name")
         country = component("country", inArray: addressComponents, ofType: "long_name")
