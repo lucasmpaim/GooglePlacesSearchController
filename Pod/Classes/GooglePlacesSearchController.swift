@@ -166,8 +166,9 @@ open class PlaceDetails: CustomStringConvertible {
 open class GooglePlacesSearchController: UISearchController, UISearchBarDelegate {
     
     fileprivate var gpaViewController: GooglePlacesAutocompleteContainer!
-    
     fileprivate var googleSearchBar: UISearchBar?
+    
+    public var searchBarPlaceHolder: String?
     
     convenience public init(apiKey: String, placeType: PlaceType = .all, searchBar: UISearchBar? = nil, coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid, radius: CLLocationDistance = 0) {
         assert(!apiKey.isEmpty, "Provide your API key")
@@ -187,7 +188,7 @@ open class GooglePlacesSearchController: UISearchController, UISearchBarDelegate
         self.searchResultsUpdater = gpaViewController
         self.hidesNavigationBarDuringPresentation = false
 //        self.dimsBackgroundDuringPresentation = false
-        self.searchBar.placeholder = "Enter Address"
+        self.searchBar.placeholder = searchBarPlaceHolder ?? "Enter Address"
     }
     
     override open var searchBar: UISearchBar {
